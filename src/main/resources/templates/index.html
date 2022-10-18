@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset = "ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+<h1>Users</h1>
+<br/>
+<a href="/new">add new user</a>
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<td>ID</td>
+<td>Email</td>
+<td>Password</td>
+<td>FirstName</td>
+<td>LastName</td>
+<td>Address</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="user : ${userlist}">
+<td th:text="${user.id}">id</td>
+<td th:text="${user.email}">id</td>
+<td th:text="${user.password}">id</td>
+<td th:text="${user.firstName}">id</td>
+<td th:text="${user.lastName}">id</td>
+<td th:text="${user.address}">id</td>
+<td>
+<a th:href="@{'/edit/'}">Edit</a>&nbsp;
+<a th:href="@{'/delete/'}">Delete</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
